@@ -102,9 +102,9 @@ UITableViewDataSource {
             name.font = UIFont.systemFont(ofSize: 20)
             headerView.addSubview(name)
             name.snp.makeConstraints({ (make) in
-                make.top.equalTo(iconBtn.snp.top)
-                make.left.equalTo(iconBtn.snp.right).offset(20)
-                make.right.equalToSuperview().offset(-100)
+                make.top.equalTo(iconBtn.snp.top).offset(-10)
+                make.left.equalTo(iconBtn.snp.right).offset(15)
+                make.right.equalToSuperview().offset(-80)
                 make.height.equalTo(30)
             })
             return name
@@ -151,14 +151,14 @@ UITableViewDataSource {
         let describeLB = { () -> UILabel in
             let describe = UILabel()
             describe.text = "欢迎来到英雄联盟，敌军还有30秒钟到达战场。"
-            describe.font = UIFont.systemFont(ofSize: 15)
+            describe.font = UIFont.systemFont(ofSize: 14)
             describe.numberOfLines = 0
             headerView.addSubview(describe)
             describe.snp.makeConstraints({ (make) in
-                make.top.equalTo(idLB.snp.bottom).offset(10)
+                make.top.equalTo(idLB.snp.bottom).offset(5)
                 make.left.equalTo(nameLB.snp.left)
-                make.right.equalToSuperview().offset(-20)
-                make.height.equalTo(60)
+                make.right.equalToSuperview().offset(-15)
+                make.height.equalTo(50)
             })
             return describe
         }()
@@ -169,11 +169,11 @@ UITableViewDataSource {
             headerView.addSubview(container)
             container.snp.makeConstraints({ (make) in
                 make.left.bottom.right.equalToSuperview()
-                make.top.equalTo(describeLB.snp.bottom).offset(5)
+                make.top.equalTo(describeLB.snp.bottom)
             })
             
             let subscribeNum = UIButton()
-            subscribeNum.setTitle("关注：103", for: .normal)
+            subscribeNum.setTitle("关注:103", for: .normal)
             subscribeNum.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             container.addSubview(subscribeNum)
             subscribeNum.snp.makeConstraints({ (make) in
@@ -182,7 +182,7 @@ UITableViewDataSource {
             })
             
             let fansNum = UIButton()
-            fansNum.setTitle("粉丝：4508万", for: .normal)
+            fansNum.setTitle("粉丝:4508万", for: .normal)
             fansNum.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             container.addSubview(fansNum)
             fansNum.snp.makeConstraints({ (make) in
@@ -192,7 +192,7 @@ UITableViewDataSource {
             })
             
             let liveHour = UIButton()
-            liveHour.setTitle("直播时长：约34小时", for: .normal)
+            liveHour.setTitle("直播时长:342小时", for: .normal)
             liveHour.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             container.addSubview(liveHour)
             liveHour.snp.makeConstraints({ (make) in
