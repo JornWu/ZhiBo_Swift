@@ -14,6 +14,11 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "navBar_bg_414x70"), for: UIBarMetrics.default)
     }
 
     override func didReceiveMemoryWarning() {

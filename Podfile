@@ -11,4 +11,5 @@ target 'ZhiBo_Swift' do
     pod 'PLPlayerKit'
     pod 'BarrageRenderer', '~> 1.8.0'
     pod 'MBProgressHUD', '~> 0.9.2'
+    pod 'LFLiveKit'
 end

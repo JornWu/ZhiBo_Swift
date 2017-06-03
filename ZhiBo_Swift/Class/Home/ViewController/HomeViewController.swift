@@ -9,7 +9,11 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: BaseViewController, UIViewControllerTransitioningDelegate, UIScrollViewDelegate {
+class HomeViewController:
+    BaseViewController,
+    UIViewControllerTransitioningDelegate,
+    UIScrollViewDelegate
+{
     
     ///点击“广场”按钮展开的下拉视图
     private var dropDownMaskView: UIView!
@@ -42,16 +46,11 @@ class HomeViewController: BaseViewController, UIViewControllerTransitioningDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupNavigationBar()
         self.createNavigationButtons()
         self.createDropDownView()
         self.createLabelScrollView()
         self.createLabelButtonContainerVC()
         self.createMainView()
-    }
-    
-    func setupNavigationBar() {
-        self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "navBar_bg_414x70"), for: UIBarMetrics.default)
     }
     
     func createNavigationButtons() {
