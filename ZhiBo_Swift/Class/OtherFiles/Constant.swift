@@ -21,6 +21,12 @@ let NORMAL_TEXT_COLOR = UIColor(red: 106.0 / 225.0,
                                blue: 99.0 / 255.0,
                               alpha: 1)
 
+let VIEW_BACKGROUND_COLOR = UIColor(red: 254.0 / 225.0,
+                                  green: 207.0 / 255.0,
+                                   blue: 219.0 / 255.0,
+                                  alpha: 1)
+
+
 let BUTTON_TAG_BARRAGE = 0x00
 let BUTTON_TAG_CHAT    = 0x01
 let BUTTON_TAG_GIFT    = 0x02

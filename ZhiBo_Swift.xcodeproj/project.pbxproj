@@ -48,6 +48,7 @@
 		43BAC7E91EE2BE3B00A93EDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BAC7E81EE2BE3B00A93EDA /* UIKit.framework */; };
 		43BAC7EB1EE2BEB200A93EDA /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BAC7EA1EE2BEB200A93EDA /* LiveViewModel.swift */; };
 		43BAC7ED1EE2DCE700A93EDA /* LiveCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BAC7EC1EE2DCE700A93EDA /* LiveCaptureViewController.swift */; };
+		43BAC7EF1EE35C8500A93EDA /* MineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BAC7EE1EE35C8500A93EDA /* MineViewModel.swift */; };
 		43F7FC581EAE340300337278 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FC571EAE340300337278 /* LinkButton.swift */; };
 		43F7FC5C1EAE4A0300337278 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FC5B1EAE4A0300337278 /* Constant.swift */; };
 		43F7FC611EAE563900337278 /* NR_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FC5E1EAE563900337278 /* NR_Data.swift */; };
@@ -133,6 +134,7 @@
 		43BAC7E81EE2BE3B00A93EDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		43BAC7EA1EE2BEB200A93EDA /* LiveViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
 		43BAC7EC1EE2DCE700A93EDA /* LiveCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveCaptureViewController.swift; sourceTree = "<group>"; };
+		43BAC7EE1EE35C8500A93EDA /* MineViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewModel.swift; sourceTree = "<group>"; };
 		43F7FC571EAE340300337278 /* LinkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		43F7FC5B1EAE4A0300337278 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		43F7FC5E1EAE563900337278 /* NR_Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NR_Data.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 		437841BC1E0014AE008B56E1 /* ViewMode */ = {
 			isa = PBXGroup;
 			children = (
+				43BAC7EE1EE35C8500A93EDA /* MineViewModel.swift */,
 			);
 			path = ViewMode;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				4337EFCD1EAA53C0007506DA /* HL_HotLiveModel.swift in Sources */,
 				43FDC1921E8E8B36007BE65A /* HomeViewModel.swift in Sources */,
 				43F7FC741EB0D30200337278 /* LiveRoomView.swift in Sources */,
+				43BAC7EF1EE35C8500A93EDA /* MineViewModel.swift in Sources */,
 				43F7FC611EAE563900337278 /* NR_Data.swift in Sources */,
 				43F7FC631EAE563900337278 /* NR_NewRoomOnlineModel.swift in Sources */,
 				43F7FC7E1EB7123400337278 /* LiveRoomAnchorInformationView.swift in Sources */,

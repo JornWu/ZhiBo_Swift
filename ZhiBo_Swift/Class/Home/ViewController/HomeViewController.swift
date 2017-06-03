@@ -54,6 +54,7 @@ class HomeViewController:
     }
     
     func createNavigationButtons() {
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "search_15x14"), style: .done, target: self, action: nil)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "head_crown_24x24"), style: .done, target: self, action: #selector(showRankingList))
         

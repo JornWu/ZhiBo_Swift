@@ -30,7 +30,6 @@ class LiveViewController: BaseViewController {
             self.view.addSubview(imgView)
             imgView.snp.makeConstraints({ (make) in
                 make.edges.equalToSuperview().inset(UIEdgeInsets.zero)
-                make.width.height.equalTo(200)
             })
             /*return imgView*/
         }/*这是一个尾随闭包*/()/*自己执行*/

@@ -12,9 +12,11 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        /// default setup navigation bar background image.
         self.setupNavigationBar()
+        /// default is hidden.
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     private func setupNavigationBar() {
