@@ -2,7 +2,7 @@
 ![](https://img.shields.io/badge/Language-Swift3.0.x-orange.svg)
 ![](https://img.shields.io/badge/Platform-iOS10.3-green.svg)
 ![](https://img.shields.io/badge/Xcode-8.0.x-red.svg)
-[![](https://img.shields.io/badge/License-MIT-000000.svg)](https://raw.githubusercontent.com/chenliming777/LFLiveKit/master/LICENSE)
+[![](https://img.shields.io/badge/License-MIT-000000.svg)](https://raw.githubusercontent.com/JornWu/ZhiBo_Swift/master/LICENSE)
 [![](https://img.shields.io/badge/Download-master-blue.svg)](https://github.com/JornWu/ZhiBo_Swift/archive/master.zip)
 
 ### 1、概述 <br />
