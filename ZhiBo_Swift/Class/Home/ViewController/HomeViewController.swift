@@ -45,7 +45,6 @@ class HomeViewController:
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.createNavigationButtons()
         self.createDropDownView()
         self.createLabelScrollView()
@@ -74,7 +73,9 @@ class HomeViewController:
     }
     
     func showRankingList() {
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(RankingListViewController(), animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     func showDropDownView(clickedButton button: UIButton) {

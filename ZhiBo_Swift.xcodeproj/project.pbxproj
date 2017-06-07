@@ -33,6 +33,8 @@
 		4337EFCD1EAA53C0007506DA /* HL_HotLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4337EFC81EAA53C0007506DA /* HL_HotLiveModel.swift */; };
 		4337EFCE1EAA53C0007506DA /* HL_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4337EFC91EAA53C0007506DA /* HL_List.swift */; };
 		4337EFD21EACB30F007506DA /* HotListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4337EFD11EACB30F007506DA /* HotListCell.swift */; };
+		43584BB81EE8203C00A54690 /* H5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43584BB61EE8203C00A54690 /* H5ViewController.swift */; };
+		43584BBA1EE8207300A54690 /* H5ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43584BB91EE8207300A54690 /* H5ViewModel.swift */; };
 		437841811DFEEA62008B56E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437841801DFEEA62008B56E1 /* AppDelegate.swift */; };
 		437841861DFEEA62008B56E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437841841DFEEA62008B56E1 /* Main.storyboard */; };
 		437841881DFEEA62008B56E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437841871DFEEA62008B56E1 /* Assets.xcassets */; };
@@ -113,6 +115,8 @@
 		4337EFC81EAA53C0007506DA /* HL_HotLiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HL_HotLiveModel.swift; sourceTree = "<group>"; };
 		4337EFC91EAA53C0007506DA /* HL_List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HL_List.swift; sourceTree = "<group>"; };
 		4337EFD11EACB30F007506DA /* HotListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotListCell.swift; sourceTree = "<group>"; };
+		43584BB61EE8203C00A54690 /* H5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H5ViewController.swift; sourceTree = "<group>"; };
+		43584BB91EE8207300A54690 /* H5ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H5ViewModel.swift; sourceTree = "<group>"; };
 		4378417D1DFEEA62008B56E1 /* ZhiBo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiBo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		437841801DFEEA62008B56E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		437841851DFEEA62008B56E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +227,31 @@
 				4337EFC91EAA53C0007506DA /* HL_List.swift */,
 			);
 			path = HotLiveModel;
+			sourceTree = "<group>";
+		};
+		43584BB21EE8200700A54690 /* WebModule */ = {
+			isa = PBXGroup;
+			children = (
+				43584BB51EE8203C00A54690 /* ViewController */,
+				43584BB71EE8203C00A54690 /* ViewModel */,
+			);
+			path = WebModule;
+			sourceTree = "<group>";
+		};
+		43584BB51EE8203C00A54690 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				43584BB61EE8203C00A54690 /* H5ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		43584BB71EE8203C00A54690 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				43584BB91EE8207300A54690 /* H5ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		437841741DFEEA62008B56E1 = {
@@ -418,6 +447,7 @@
 				43F7FC571EAE340300337278 /* LinkButton.swift */,
 				43F7FC5B1EAE4A0300337278 /* Constant.swift */,
 				432CB67A1EBA1FE1002E5C81 /* ZhiBo_Swift_PCH.pch */,
+				43584BB21EE8200700A54690 /* WebModule */,
 			);
 			path = OtherFiles;
 			sourceTree = "<group>";
@@ -723,6 +753,7 @@
 				4337EFCD1EAA53C0007506DA /* HL_HotLiveModel.swift in Sources */,
 				43FDC1921E8E8B36007BE65A /* HomeViewModel.swift in Sources */,
 				43F7FC741EB0D30200337278 /* LiveRoomView.swift in Sources */,
+				43584BBA1EE8207300A54690 /* H5ViewModel.swift in Sources */,
 				43BAC7EF1EE35C8500A93EDA /* MineViewModel.swift in Sources */,
 				43F7FC611EAE563900337278 /* NR_Data.swift in Sources */,
 				43F7FC631EAE563900337278 /* NR_NewRoomOnlineModel.swift in Sources */,
@@ -733,6 +764,7 @@
 				430A45BA1E6460AA006029A2 /* BaseNavigationViewController.swift in Sources */,
 				430A45B81E6458E1006029A2 /* MineViewController.swift in Sources */,
 				4337EFB71EAA45D4007506DA /* HotViewModel.swift in Sources */,
+				43584BB81EE8203C00A54690 /* H5ViewController.swift in Sources */,
 				430A45BC1E64771F006029A2 /* RankingListViewController.swift in Sources */,
 				4337EFCB1EAA53C0007506DA /* AD_Data.swift in Sources */,
 				43F7FC651EAE5B5400337278 /* NewRoomOnlineCell.swift in Sources */,

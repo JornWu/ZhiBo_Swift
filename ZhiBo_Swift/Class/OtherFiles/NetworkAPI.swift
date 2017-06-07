@@ -11,7 +11,8 @@ import UIKit
 enum NetworkAPI {
     case advertisementURLString
     case hotDataURLString
-    case newRoomOnline
+    case newRoomOnlineURLString
+    case rankListURLString
     
     func getUrlString() -> String {
         switch self {
@@ -19,15 +20,20 @@ enum NetworkAPI {
             return "http://live.9158.com/Living/GetAD"
         case .hotDataURLString:
             return "http://live.9158.com/Fans/GetHotLive?page=1"//%ld
-        case .newRoomOnline:
+        case .newRoomOnlineURLString:
             return "http://live.9158.com/Room/GetNewRoomOnline?page=1"//%ld
-        default:
-            return "Jorn Wu"
+        case .rankListURLString:
+            return "http://live.9158.com/Rank/WeekRank?Random=10"//ld
         }
     }
     
     ///根据urlString类型返回ULR对象
-    static func urlWith(_ type: NetworkAPI) -> URL {
+    static func urlWith(_ type: NetworkAPI) -> URL? {
+        let url = URL(string: type.getUrlString())
+        guard url != nil else {
+            print("Get url by 'NetorkAPI' error.")
+            return nil
+        }
         return URL(string: type.getUrlString())!
     }
 }

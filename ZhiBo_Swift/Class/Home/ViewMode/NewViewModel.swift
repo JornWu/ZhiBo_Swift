@@ -17,7 +17,7 @@ class NewViewModel: NSObject {
     
     override init() {
         super.init()
-        setupNewRoomOnlineSignal(withURLString: NetworkAPI.newRoomOnline.getUrlString())
+        setupNewRoomOnlineSignal(withURLString: NetworkAPI.newRoomOnlineURLString.getUrlString())
     }
     
     private func setupNewRoomOnlineSignal(withURLString urlString: String) {
