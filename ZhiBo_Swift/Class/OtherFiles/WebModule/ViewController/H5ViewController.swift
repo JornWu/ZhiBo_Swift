@@ -172,7 +172,7 @@ class H5ViewController: BaseViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         activityView.stopAnimating()
         self.title = "排行"
-        print("=======================\n", webView.stringByEvaluatingJavaScript(from: "JSON.stringify(document)") ?? "")
+        //print("=======================\n", webView.stringByEvaluatingJavaScript(from: "JSON.stringify(document)") ?? "")
     }
     
     

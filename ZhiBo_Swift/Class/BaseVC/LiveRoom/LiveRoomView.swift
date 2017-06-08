@@ -66,7 +66,7 @@ class LiveRoomView: UIView, PLPlayerDelegate {
     
 ///--------------------------property-------------------------
     
-    private lazy var currentLiveModeSignal: Signal<AnyObject, NoError> = {
+    private lazy var currentLiveModeSignal: Signal<LiveRoomModel, NoError> = {
         
         ///
         ///     如果是值类型，可以用reactive的KVO方法来监听
@@ -127,23 +127,10 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         interactiveView.removeFromSuperview()
     }
 
-    private func setupLivePlayer(withRoomModel model: AnyObject) {
-        
-        var imgUrl: String? = nil
-        var link: String? = nil
-
-        if let data = model as? HL_List {
-            link = data.flv
-            imgUrl = data.bigpic
-        }
-        else if let data = model as? NR_List {
-            link = data.flv
-            imgUrl = data.photo
-        }
-        
-        livePlayer = PLPlayer(liveWith: URL(string: link ?? ""), option: self.options)
+    private func setupLivePlayer(withRoomModel model: LiveRoomModel) {
+        livePlayer = PLPlayer(liveWith: URL(string: model.flv ?? ""), option: self.options)
         livePlayer.delegate = self
-        livePlayer.launchView?.sd_setImage(with: URL(string: imgUrl ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder_head"))
+        livePlayer.launchView?.sd_setImage(with: URL(string: model.bigpic ?? model.photo ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder_head"))
         livePlayer.play()
         
         self.addSubview(livePlayer.playerView!)
@@ -154,6 +141,8 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         interactiveView.snp.makeConstraints { (make) in
             make.edges.height.equalToSuperview()
         }
+        /// 调用currentAnchorModel方法
+        interactiveView.currentAnchorModel = model
     }
     
 ///---------------------------------------------------

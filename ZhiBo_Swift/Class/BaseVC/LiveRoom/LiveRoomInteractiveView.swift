@@ -19,8 +19,6 @@ class LiveRoomInteractiveView: UIView {
 ///
     
     final class var shareLiveRoomInteractiveView: LiveRoomInteractiveView {
-        intance.setupToolBar()
-        intance.setupAnchorIconButton()
         return intance;
     }
     
@@ -35,14 +33,37 @@ class LiveRoomInteractiveView: UIView {
 ///---------------------------------------------------
 ///     property
 ///
-    
+    ///
+    /// view model
+    ///
     private lazy var interactiveViewModel: LiveRoomInteractiveViewModel = {
         return LiveRoomInteractiveViewModel()
     }()
     
+    ///
+    /// 当前主播的数据model
+    ///
+    var currentAnchorModel: LiveRoomModel? = nil {
+        didSet {
+            initData()
+        }
+    }
+    
 ///---------------------------------------------------
+///     method
+///
+    ///
+    /// 根据所给的model初始化页面
+    ///
+    private func initData() {
+        setupToolBar()
+        setupAnchorIconButton()
+    }
    
-    func setupToolBar() {
+    ///
+    /// 底部的工具栏
+    ///
+    private func setupToolBar() {
         let toolbar = UIView()
         toolbar.backgroundColor = UIColor(white: 1, alpha: 0.5)
         self.addSubview(toolbar)
@@ -79,17 +100,23 @@ class LiveRoomInteractiveView: UIView {
             }
             preBtn = toolBtn
             
+            ///
+            /// 聚合所有的按钮信号，只要有一个按钮点击就会发出
+            ///
             if preSignal == nil {
                 preSignal = toolBtn.reactive.controlEvents(.touchUpInside)
             }
             else {
-                preSignal = Signal<UIButton, NoError>.merge(preSignal!, toolBtn.reactive.controlEvents(.touchUpInside))
+                preSignal = Signal<UIButton, NoError>
+                    .merge(preSignal!, toolBtn
+                        .reactive
+                        .controlEvents(.touchUpInside))
             }
         }
         
         preSignal?.observeValues { (button) in
             switch button.tag {
-            case BUTTON_TAG_EXIT:
+            case BUTTON_TAG_EXIT:/// 退出直播间
                 LiveRoomViewController.shareLiveRoomViewController.dismiss(animated: true, completion: {
                     print("Have leave the live room.")
                 })
@@ -98,15 +125,74 @@ class LiveRoomInteractiveView: UIView {
         }
     }
     
-    func setupAnchorIconButton() {
-        let unfoldBtn = UIButton()
-        self.addSubview(unfoldBtn)
-        unfoldBtn.snp.makeConstraints { (make) in
-            make.left.top.equalTo(5)
-            make.width.equalTo(120)
-            make.height.equalTo(50)
-        }
+    ///
+    /// 创建左上角的主播的信息和关注列表展开按钮
+    ///
+    private func setupAnchorIconButton() {
+        
+        ///
+        /// 展开按钮
+        ///
+        let unfoldBtn = { () -> UIButton in
+            let button = UIButton()
+            button.backgroundColor = UIColor.gray
+            self.addSubview(button)
+            button.snp.makeConstraints { (make) in
+                make.top.equalTo(18)
+                make.left.equalTo(15)
+                make.width.equalTo(140)
+                make.height.equalTo(50)
+            }
+            button.layer.cornerRadius = 25
+            return button
+        }()
+        
+        ///
+        /// 关注按钮
+        ///
+        _ = { () -> UIButton in
+            let button = UIButton()
+            button.backgroundColor = THEME_COLOR
+            button.setTitle("关注", for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            unfoldBtn.addSubview(button)
+            button.snp.makeConstraints { (make) in
+                make.top.equalTo(5)
+                make.bottom.right.equalTo(-5)
+                make.width.equalTo(50)
+            }
+            button.layer.cornerRadius = 20
+            
+            button.reactive.controlEvents(.touchUpInside).observeValues({ (btn) in
+                //do something
+                print("你已经成功关注了该主播。")
+            })
+            
+            return button
+        }()
+        
+        ///
+        /// 主播头像按钮
+        ///
+        _ = { () -> UIButton in
+            let button = UIButton()
+            button.backgroundColor = THEME_COLOR
+            button.setTitle("关注", for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            unfoldBtn.addSubview(button)
+            button.snp.makeConstraints { (make) in
+                make.top.left.equalTo(3)
+                make.bottom.equalTo(-3)
+                make.width.equalTo(50)
+            }
+            button.layer.cornerRadius = 22
+            
+            button.reactive.controlEvents(.touchUpInside).observeValues({ (btn) in
+                //do something
+            })
+            
+            return button
+        }()
         
     }
-
 }

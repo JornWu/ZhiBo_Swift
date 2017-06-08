@@ -24,7 +24,8 @@ class LiveRoomCollectionViewCell: UICollectionViewCell {
     
     public func setupCell(withImageURLString urlString: String, flvLinkString: String) {
         self.contentView.addSubview(self.contentImageView)
-        self.contentImageView.sd_setImage(with: URL(string: urlString), placeholderImage: #imageLiteral(resourceName: "placeholder_head"))
+        self.contentImageView.sd_setImage(with: URL(string: urlString),
+                              placeholderImage: #imageLiteral(resourceName: "placeholder_head"))
         contentImageView.snp.makeConstraints { (make) in
             make.edges.height.equalToSuperview()
         }

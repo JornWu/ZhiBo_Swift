@@ -64,6 +64,7 @@
 		43F7FC7E1EB7123400337278 /* LiveRoomAnchorInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FC7D1EB7123400337278 /* LiveRoomAnchorInformationView.swift */; };
 		43F7FC801EB732FB00337278 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FC7F1EB732FB00337278 /* RootController.swift */; };
 		43F7FC8B1EB7420700337278 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F7FC8A1EB7420700337278 /* VideoToolbox.framework */; };
+		43FAE71E1EE8691F00B7A37F /* LiveRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAE71D1EE8691F00B7A37F /* LiveRoomModel.swift */; };
 		43FDC18E1E8E8A16007BE65A /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FDC18B1E8E8A16007BE65A /* ReactiveCocoa.framework */; };
 		43FDC18F1E8E8A16007BE65A /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FDC18C1E8E8A16007BE65A /* ReactiveSwift.framework */; };
 		43FDC1901E8E8A16007BE65A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FDC18D1E8E8A16007BE65A /* Result.framework */; };
@@ -152,6 +153,7 @@
 		43F7FC7D1EB7123400337278 /* LiveRoomAnchorInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveRoomAnchorInformationView.swift; sourceTree = "<group>"; };
 		43F7FC7F1EB732FB00337278 /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootController.swift; path = ZhiBo_Swift/RootController.swift; sourceTree = SOURCE_ROOT; };
 		43F7FC8A1EB7420700337278 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		43FAE71D1EE8691F00B7A37F /* LiveRoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveRoomModel.swift; sourceTree = "<group>"; };
 		43FDC18B1E8E8A16007BE65A /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../../Library/Developer/Xcode/DerivedData/ZhiBo_Swift-emsgziucfwlyuxhcqqzuotrwlata/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		43FDC18C1E8E8A16007BE65A /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/ZhiBo_Swift-emsgziucfwlyuxhcqqzuotrwlata/Build/Products/Debug-iphonesimulator/ReactiveSwift/ReactiveSwift.framework"; sourceTree = "<group>"; };
 		43FDC18D1E8E8A16007BE65A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../../../Library/Developer/Xcode/DerivedData/ZhiBo_Swift-emsgziucfwlyuxhcqqzuotrwlata/Build/Products/Debug-iphonesimulator/Result/Result.framework"; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 		43F7FC701EB0D30200337278 /* LiveRoom */ = {
 			isa = PBXGroup;
 			children = (
+				43FAE71C1EE868FF00B7A37F /* Model */,
 				43F7FC781EB0E70600337278 /* ViewModel */,
 				43F7FC771EB0E6E900337278 /* ViewController */,
 			);
@@ -510,6 +513,14 @@
 				432CB6781EBA1DB4002E5C81 /* LiveRoomInteractiveViewModel.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		43FAE71C1EE868FF00B7A37F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43FAE71D1EE8691F00B7A37F /* LiveRoomModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		9E1538168054D9B0A32CBF49 /* Frameworks */ = {
@@ -770,6 +781,7 @@
 				43F7FC651EAE5B5400337278 /* NewRoomOnlineCell.swift in Sources */,
 				43F7FC7C1EB7117F00337278 /* LiveRoomInteractiveView.swift in Sources */,
 				4337EFBD1EAA479B007506DA /* NetworkAPI.swift in Sources */,
+				43FAE71E1EE8691F00B7A37F /* LiveRoomModel.swift in Sources */,
 				43BAC7ED1EE2DCE700A93EDA /* LiveCaptureViewController.swift in Sources */,
 				432CB6791EBA1DB4002E5C81 /* LiveRoomInteractiveViewModel.swift in Sources */,
 			);
