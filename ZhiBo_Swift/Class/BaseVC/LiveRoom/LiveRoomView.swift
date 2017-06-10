@@ -53,6 +53,13 @@ class LiveRoomView: UIView, PLPlayerDelegate {
     ///
     ///     私有化构造方法，避免外部调用
     ///
+    private init() {
+        super.init(frame: .zero)
+    }
+    
+    ///
+    ///     私有化构造方法，避免外部调用
+    ///
     private override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -64,7 +71,7 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-///--------------------------property-------------------------
+//MARK: - property
     
     private lazy var currentLiveModeSignal: Signal<LiveRoomModel, NoError> = {
         
@@ -111,7 +118,7 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         return LiveRoomInteractiveView.shareLiveRoomInteractiveView
     }()
 
-///---------------------------------------------------
+//MARK: - method
     
     public func stop() {
         guard let player = livePlayer else {
@@ -135,7 +142,7 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         
         self.addSubview(livePlayer.playerView!)
         
-        print("------self:", self)
+        //FIXME: bug:第一次livePlayer view和 interactive view未显示
         
         self.insertSubview(self.interactiveView, aboveSubview: livePlayer.playerView!)
         interactiveView.snp.makeConstraints { (make) in
@@ -144,10 +151,9 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         /// 调用currentAnchorModel方法
         interactiveView.currentAnchorModel = model
     }
+
+//MARK: - PLPlayerDelegate
     
-///---------------------------------------------------
-/// PLPlayerDelegate
-///
     func player(_ player: PLPlayer, statusDidChange state: PLPlayerStatus) {
         // 这里会返回流的各种状态，你可以根据状态做 UI 定制及各类其他业务操作
         // 除了 Error 状态，其他状态都会回调这个方法

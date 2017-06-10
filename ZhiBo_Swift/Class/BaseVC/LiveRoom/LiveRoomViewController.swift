@@ -62,10 +62,23 @@ final class LiveRoomViewController:
         return instance
     }
     
+    ///
+    ///     私有化构造方法，避免外部调用
+    ///
+    private init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    ///
+    ///     私有化构造方法，避免外部调用
+    ///
     private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
+    ///
+    ///     私有化构造方法，避免外部调用
+    ///
     internal required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
@@ -256,12 +269,12 @@ final class LiveRoomViewController:
             currentRoomIndex = index
             
             ///
-            /// 从前一个cell中移出
+            ///     从前一个cell中移出
             ///
             self.liveRoomView.removeFromSuperview()
             
             ///
-            /// 如果roomDataAr[currentRoomIndex]是值类型，可以直接调用setter，产生信号
+            ///     如果roomDataAr[currentRoomIndex]是值类型，可以直接调用setter，产生信号
             ///
             self.currentRoomModeSignalPipe.input.send(value: self.roomDataAr[currentRoomIndex])
             

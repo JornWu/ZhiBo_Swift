@@ -13,7 +13,12 @@ import Result
 
 class LiveRoomInteractiveViewModel: NSObject {
     
-    var toolBarButtonSignal: Signal<UIButton, NoError>!
+    ///
+    /// 用于聚合工具栏中所有按钮发出的信号
+    ///
+    lazy var toolBarButtonSignal: Signal<UIButton, NoError> = {
+        return Signal<UIButton, NoError>({_ in return nil})
+    }()
     
     override init() {
         super.init()
