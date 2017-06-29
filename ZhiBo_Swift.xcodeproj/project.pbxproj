@@ -68,6 +68,10 @@
 		43FAE7201EE9AD3C00B7A37F /* LiveRoomAnchorInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAE71F1EE9AD3C00B7A37F /* LiveRoomAnchorInformationViewModel.swift */; };
 		43FAE7241EEC021C00B7A37F /* LiveRoomAnchorSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAE7231EEC021C00B7A37F /* LiveRoomAnchorSearchView.swift */; };
 		43FAE7261EEC264500B7A37F /* LiveRoomAnchorSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAE7251EEC264500B7A37F /* LiveRoomAnchorSearchViewModel.swift */; };
+		43FAE7291EF157F600B7A37F /* JWLiveVideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAE7281EF157F600B7A37F /* JWLiveVideoCapture.swift */; };
+		43FAE72B1EF1583800B7A37F /* JWLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAE72A1EF1583800B7A37F /* JWLiveViewController.swift */; };
+		43FAE72D1EF18D8B00B7A37F /* JWLiveAudioCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAE72C1EF18D8B00B7A37F /* JWLiveAudioCapture.swift */; };
+		43FAE72F1EF18DF400B7A37F /* JWLiveCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAE72E1EF18DF400B7A37F /* JWLiveCaptureSession.swift */; };
 		43FDC18E1E8E8A16007BE65A /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FDC18B1E8E8A16007BE65A /* ReactiveCocoa.framework */; };
 		43FDC18F1E8E8A16007BE65A /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FDC18C1E8E8A16007BE65A /* ReactiveSwift.framework */; };
 		43FDC1901E8E8A16007BE65A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43FDC18D1E8E8A16007BE65A /* Result.framework */; };
@@ -159,6 +163,10 @@
 		43FAE71F1EE9AD3C00B7A37F /* LiveRoomAnchorInformationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveRoomAnchorInformationViewModel.swift; sourceTree = "<group>"; };
 		43FAE7231EEC021C00B7A37F /* LiveRoomAnchorSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveRoomAnchorSearchView.swift; sourceTree = "<group>"; };
 		43FAE7251EEC264500B7A37F /* LiveRoomAnchorSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveRoomAnchorSearchViewModel.swift; sourceTree = "<group>"; };
+		43FAE7281EF157F600B7A37F /* JWLiveVideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWLiveVideoCapture.swift; sourceTree = "<group>"; };
+		43FAE72A1EF1583800B7A37F /* JWLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWLiveViewController.swift; sourceTree = "<group>"; };
+		43FAE72C1EF18D8B00B7A37F /* JWLiveAudioCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWLiveAudioCapture.swift; sourceTree = "<group>"; };
+		43FAE72E1EF18DF400B7A37F /* JWLiveCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWLiveCaptureSession.swift; sourceTree = "<group>"; };
 		43FDC18B1E8E8A16007BE65A /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../../Library/Developer/Xcode/DerivedData/ZhiBo_Swift-emsgziucfwlyuxhcqqzuotrwlata/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		43FDC18C1E8E8A16007BE65A /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/ZhiBo_Swift-emsgziucfwlyuxhcqqzuotrwlata/Build/Products/Debug-iphonesimulator/ReactiveSwift/ReactiveSwift.framework"; sourceTree = "<group>"; };
 		43FDC18D1E8E8A16007BE65A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../../../Library/Developer/Xcode/DerivedData/ZhiBo_Swift-emsgziucfwlyuxhcqqzuotrwlata/Build/Products/Debug-iphonesimulator/Result/Result.framework"; sourceTree = "<group>"; };
@@ -391,6 +399,7 @@
 		437841B51E0014AE008B56E1 /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				43FAE7271EF033EC00B7A37F /* JWLiveModule */,
 				437841B71E0014AE008B56E1 /* ViewController */,
 				437841B61E0014AE008B56E1 /* Mode */,
 				437841B81E0014AE008B56E1 /* ViewMode */,
@@ -528,6 +537,17 @@
 				43FAE71D1EE8691F00B7A37F /* LiveRoomModel.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		43FAE7271EF033EC00B7A37F /* JWLiveModule */ = {
+			isa = PBXGroup;
+			children = (
+				43FAE7281EF157F600B7A37F /* JWLiveVideoCapture.swift */,
+				43FAE72C1EF18D8B00B7A37F /* JWLiveAudioCapture.swift */,
+				43FAE72E1EF18DF400B7A37F /* JWLiveCaptureSession.swift */,
+				43FAE72A1EF1583800B7A37F /* JWLiveViewController.swift */,
+			);
+			name = JWLiveModule;
 			sourceTree = "<group>";
 		};
 		9E1538168054D9B0A32CBF49 /* Frameworks */ = {
@@ -759,10 +779,12 @@
 				4337EFCA1EAA53C0007506DA /* AD_AdvertisementModel.swift in Sources */,
 				43BAC7EB1EE2BEB200A93EDA /* LiveViewModel.swift in Sources */,
 				43F7FC621EAE563900337278 /* NR_List.swift in Sources */,
+				43FAE7291EF157F600B7A37F /* JWLiveVideoCapture.swift in Sources */,
 				43FAE7241EEC021C00B7A37F /* LiveRoomAnchorSearchView.swift in Sources */,
 				430136A71E686FED00E891AB /* HotViewController.swift in Sources */,
 				430136A91E68702600E891AB /* NewViewController.swift in Sources */,
 				430A45B21E645887006029A2 /* HomeViewController.swift in Sources */,
+				43FAE72F1EF18DF400B7A37F /* JWLiveCaptureSession.swift in Sources */,
 				43F7FC7A1EB0F05100337278 /* LiveRoomCollectionViewCell.swift in Sources */,
 				430136AB1E68703400E891AB /* LoveView.swift in Sources */,
 				43FAE7201EE9AD3C00B7A37F /* LiveRoomAnchorInformationViewModel.swift in Sources */,
@@ -772,7 +794,9 @@
 				43F7FC801EB732FB00337278 /* RootController.swift in Sources */,
 				4337EFCC1EAA53C0007506DA /* HL_Data.swift in Sources */,
 				4337EFCD1EAA53C0007506DA /* HL_HotLiveModel.swift in Sources */,
+				43FAE72B1EF1583800B7A37F /* JWLiveViewController.swift in Sources */,
 				43FDC1921E8E8B36007BE65A /* HomeViewModel.swift in Sources */,
+				43FAE72D1EF18D8B00B7A37F /* JWLiveAudioCapture.swift in Sources */,
 				43F7FC741EB0D30200337278 /* LiveRoomView.swift in Sources */,
 				43584BBA1EE8207300A54690 /* H5ViewModel.swift in Sources */,
 				43BAC7EF1EE35C8500A93EDA /* MineViewModel.swift in Sources */,
@@ -976,7 +1000,7 @@
 					"-framework",
 					"\"SnapKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Jorn-Wu.ZhiBo-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JornWu.ZhiBoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ZhiBo_Swift/Class/BaseVC/LiveRoom/PLPlayerKitHeader.h";
 				SWIFT_VERSION = 3.0;
@@ -1018,7 +1042,7 @@
 					"-framework",
 					"\"SnapKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Jorn-Wu.ZhiBo-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JornWu.ZhiBoSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ZhiBo_Swift/Class/BaseVC/LiveRoom/PLPlayerKitHeader.h";
 				SWIFT_VERSION = 3.0;

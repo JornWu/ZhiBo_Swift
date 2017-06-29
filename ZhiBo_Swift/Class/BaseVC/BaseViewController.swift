@@ -13,6 +13,8 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = VIEW_BACKGROUND_COLOR
+        
         /// default setup navigation bar background image.
         self.setupNavigationBar()
         /// default is hidden.

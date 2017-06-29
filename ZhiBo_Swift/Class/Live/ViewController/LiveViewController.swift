@@ -71,7 +71,11 @@ class LiveViewController: BaseViewController {
             button.reactive.controlEvents(.touchUpInside).observeValues {
                 [unowned self]
                 (btn) in
-                self.present(self.captureVC, animated: true, completion: nil)
+                
+                //TODO: 使用JWLiveModule or LFLiveKit
+                
+                //self.present(self.captureVC, animated: true, completion: nil)
+                self.present(JWLiveViewController(), animated: true, completion: nil)
             }
             
             return button
