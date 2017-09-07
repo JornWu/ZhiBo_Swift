@@ -53,6 +53,13 @@ class LiveRoomView: UIView, PLPlayerDelegate {
     ///
     ///     私有化构造方法，避免外部调用
     ///
+    private init() {
+        super.init(frame: .zero)
+    }
+    
+    ///
+    ///     私有化构造方法，避免外部调用
+    ///
     private override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -64,9 +71,9 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-///--------------------------property-------------------------
+//MARK: - property
     
-    private lazy var currentLiveModeSignal: Signal<AnyObject, NoError> = {
+    private lazy var currentLiveModeSignal: Signal<LiveRoomModel, NoError> = {
         
         ///
         ///     如果是值类型，可以用reactive的KVO方法来监听
@@ -111,7 +118,7 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         return LiveRoomInteractiveView.shareLiveRoomInteractiveView
     }()
 
-///---------------------------------------------------
+//MARK: - method
     
     public func stop() {
         guard let player = livePlayer else {
@@ -127,38 +134,26 @@ class LiveRoomView: UIView, PLPlayerDelegate {
         interactiveView.removeFromSuperview()
     }
 
-    private func setupLivePlayer(withRoomModel model: AnyObject) {
-        
-        var imgUrl: String? = nil
-        var link: String? = nil
-
-        if let data = model as? HL_List {
-            link = data.flv
-            imgUrl = data.bigpic
-        }
-        else if let data = model as? NR_List {
-            link = data.flv
-            imgUrl = data.photo
-        }
-        
-        livePlayer = PLPlayer(liveWith: URL(string: link ?? ""), option: self.options)
+    private func setupLivePlayer(withRoomModel model: LiveRoomModel) {
+        livePlayer = PLPlayer(liveWith: URL(string: model.flv ?? ""), option: self.options)
         livePlayer.delegate = self
-        livePlayer.launchView?.sd_setImage(with: URL(string: imgUrl ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder_head"))
+        livePlayer.launchView?.sd_setImage(with: URL(string: model.bigpic ?? model.photo ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder_head"))
         livePlayer.play()
         
         self.addSubview(livePlayer.playerView!)
         
-        print("------self:", self)
+        //FIXME: bug:第一次livePlayer view和 interactive view未显示
         
         self.insertSubview(self.interactiveView, aboveSubview: livePlayer.playerView!)
         interactiveView.snp.makeConstraints { (make) in
             make.edges.height.equalToSuperview()
         }
+        /// 调用currentAnchorModel方法
+        interactiveView.currentAnchorModel = model
     }
+
+//MARK: - PLPlayerDelegate
     
-///---------------------------------------------------
-/// PLPlayerDelegate
-///
     func player(_ player: PLPlayer, statusDidChange state: PLPlayerStatus) {
         // 这里会返回流的各种状态，你可以根据状态做 UI 定制及各类其他业务操作
         // 除了 Error 状态，其他状态都会回调这个方法

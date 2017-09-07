@@ -8,13 +8,14 @@
 
 import UIKit
 
-class RankingListViewController: BaseViewController {
+class RankingListViewController: H5ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         self.view.backgroundColor = UIColor.white;
+        self.URLString = NetworkAPI.rankListURLString.getUrlString()
+        //self.isShowControlView = true
     }
 
     override func didReceiveMemoryWarning() {
