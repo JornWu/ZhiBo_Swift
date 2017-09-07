@@ -30,6 +30,7 @@ class JWLiveCaptureSession:
 NSObject,
 AVCaptureVideoDataOutputSampleBufferDelegate,
 AVCaptureAudioDataOutputSampleBufferDelegate {
+//MARK: - PROPERTY
     /** videoCapture */
     var videoCapture: JWLiveVideoCapture? = nil {
         didSet {
@@ -117,6 +118,8 @@ AVCaptureAudioDataOutputSampleBufferDelegate {
         return AVCaptureSession()
     }()
     
+//MARK: - METHOD
+    
     override init() {
         super.init()
         setSession()
@@ -172,7 +175,6 @@ AVCaptureAudioDataOutputSampleBufferDelegate {
     }
     
 //MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
-    
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         
         //FIXME: video
@@ -191,6 +193,38 @@ AVCaptureAudioDataOutputSampleBufferDelegate {
             ///     #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
             ///
             
+            //////////////////////////////////////////////////////////////////
+            let iamgeBuffer: CVImageBuffer? = CMSampleBufferGetImageBuffer(sampleBuffer)
+            var ciImage: CIImage = CIImage(cvImageBuffer: iamgeBuffer!)
+            
+            //let filters = ciImage.autoAdjustmentFilters()
+            //print(filters)
+            //CIRedEyeCorrection：修复因相机的闪光灯导致的各种红眼
+            //CIFaceBalance：调整肤色
+            //CIVibrance：在不影响肤色的情况下，改善图像的饱和度
+            //CIToneCurve：改善图像的对比度
+            //CIHighlightShadowAdjust：改善阴影细节
+            
+//            for filter in filters {
+//                if filter.name == "CIFaceBalance" {
+//                    filter.setValue(ciImage, forKey: "inputImage")
+//                    filter.setValue(100, forKey: "inputStrength")
+//                    ciImage = filter.outputImage!
+//                }
+//            }
+            
+            let filter = CIFilter(name: "CIFaceBalance")
+            filter?.setValue(ciImage, forKey: "inputImage")
+            filter?.setValue(100, forKey: "inputStrength")
+            ciImage = (filter?.outputImage)!
+            
+            let uiImage = UIImage(ciImage: ciImage)
+            UIImageWriteToSavedPhotosAlbum(uiImage,
+                                           self,
+                                           #selector(image(_:
+                                            didFinishSavingWithError:contextInfo:)),
+                                           nil)
+            
             
         }
         
@@ -201,17 +235,17 @@ AVCaptureAudioDataOutputSampleBufferDelegate {
         }
     }
     
-    @objc private func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
+    @objc private func image(_ image: UIImage,
+      didFinishSavingWithError error: NSError?,
+                         contextInfo: AnyObject) {
         guard error != nil else {
             print("图片保存成功！")
             return
         }
         print("图片保存失败！Error:", error?.localizedDescription ?? "")
-        
     }
     
 //    var index = 0
-    
     private func imageFromSampleBuffer(_ buffer: CMSampleBuffer) -> UIImage? {
         /** Get a CMSampleBuffer's Core Video image buffer for the media data */
         let imageBuffer: CVImageBuffer? = CMSampleBufferGetImageBuffer(buffer)
