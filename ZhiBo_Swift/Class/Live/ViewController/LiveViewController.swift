@@ -74,8 +74,8 @@ class LiveViewController: BaseViewController {
                 
                 //TODO: 使用JWLiveModule or LFLiveKit
                 
-                //self.present(self.captureVC, animated: true, completion: nil)
-                self.present(JWLiveViewController(), animated: true, completion: nil)
+                self.present(self.captureVC, animated: true, completion: nil)
+                //self.present(JWLiveViewController(), animated: true, completion: nil)
             }
             
             return button
