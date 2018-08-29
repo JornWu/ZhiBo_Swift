@@ -21,18 +21,16 @@ APP工程两大模块都是集成三方封装好的库，所有需要实现的�
 >#<span style="color: red;">*想要获取最新版本样式请选dev分支。*</span> <br />
 <Pre>
 如有问题或者好的idea请咨询：
-QQ: 1249233155，
-Email: jorn_wza@sina.com， 
-微博：<a href="http://weibo.com/u/5077687473">JornWu丶WwwwW</a>
-简书：<a href="http://www.jianshu.com/u/c718dbf8e4d0">JornWu丶WwwwW</a>
+QQ: 1249233155
+Email: jornwucn@gmail.com
+微博：<a href="http://weibo.com/u/5077687473">Jorn丶Wu</a>
+简书：<a href="http://www.jianshu.com/u/c718dbf8e4d0">Jorn丶Wu</a>
 博客：<a href="http://blog.sina.com.cn/u/5077687473">梦迹灬何寻</a>
 </Pre>
 
 ### 2、获取 <br />
 <div>
 一、<a href="https://github.com/JornWu/ZhiBo_Swift/archive/master.zip">直接下载ZIP</a> <br />
-二、<a href="https://github.com/JornWu/ZhiBo_Swift.git">check out到本地</a> <br />
-三、<a href="https://github.com/JornWu/ZhiBo_Swift.git">clone 仓库到本地</a> <br />
-四、<a href="github-mac://openRepo/https://github.com/JornWu/ZhiBo_Swift">Open in Desktop</a> <br />
+二、<a href="github-mac://openRepo/https://github.com/JornWu/ZhiBo_Swift">Open in Desktop</a> <br />
 </div>
 
